@@ -1,0 +1,189 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usetheme[height=8mm]{Rochester}
+\usecolortheme[RGB={0,120,200}]{structure}
+\usepackage{fancybox}
+\setbeamertemplate{navigation symbols}{}
+\usepackage{graphicx}
+\usepackage[brazilian]{babel}
+\usepackage{helvet}
+\usepackage{ragged2e}
+\beamertemplatenavigationsymbolsempty
+\renewcommand{\familydefault}{\sfdefault}
+\title{Curvas no Espaço de Minkowski}
+\author{João Vitor Parada Poletto \\ \small{Orientadores: Prof. Dr.Hudson do N. Lima e Prof. Dr. Rodrigo R. Montes}}
+\date{06 de novembro de 2018}
+\institute{Universidade Federal do Paraná}
+\begin{document}
+\frame{\titlepage \begin{figure}[br]
+\includegraphics[scale=0.25]{logo_picme03.png}
+\end{figure}}
+
+\frame{\frametitle{Definições}
+
+\begin{block}{Definição 1}
+\justifying
+O \textbf{espaço de Minkowski} (denotado por $\mathbb{R}^3_1$) é formado por vetores $\left\{{(x_1, x_2, x_3)\ |\ x_1, x_2, x_3 \in \mathbb{R}}\right\}$ e munido da métrica  $${\langle {X},{Y}\rangle}_1 = -x_1y_1 + x_2y_2 + x_3y_3.$$
+\end{block}
+}
+
+
+\frame{\frametitle{Definições}
+\begin{block}{Definição 2}
+\justifying
+ No espaço de Minkowski um \textit{vetor} $X$ é dito:
+	
+	\begin{enumerate}
+	\item[•]$\textrm{\textbf{tipo-espaço}, se} \,{\langle {X},{X}\rangle}_1 > 0$
+	\item[•]$\textrm{\textbf{tipo-tempo}, se} \,{\langle {X},{X}\rangle}_1 < 0$
+	\item[•]$\textrm{\textbf{tipo-luz}, se} \,{\langle {X},{X}\rangle}_1 = 0,\, \textrm{mas} \, {X}\neq 0$
+	\end{enumerate}
+	\end{block} \pause
+	\justifying Uma \textbf{curva regular} $c\colon I \to \mathbb{R}^3_1$ nesse espaço é definida de acordo com os seus \textit{vetores tangentes}.
+
+
+}
+
+\frame{\frametitle{Exemplos}
+\begin{block}{Exemplo 1}
+\justifying A hipérbole ${x_1}^2={x_2}^2+1$ ,$x_3=0$, é tipo-espaço, pois utilizando a parametrização $ c(t) = (cosh(t),senh(t),0)$, tem-se que ${\langle {\dot{c}},{\dot{c}}\rangle}_1 =1$.
+\end{block} \pause
+\begin{block}{Exemplo 2}
+\justifying A linha dada por  $ c(t) = (t,0,t)$ é tipo-luz, pois ${\langle {\dot{c}},{\dot{c}}\rangle}_1 = 0$. 
+\end{block}
+}
+
+\frame{\frametitle{Aplicações na relatividade}
+\justifying
+\begin{enumerate}
+	\item[(i)]Interpretação da curva como partícula; \pause
+
+	\ \\
+	
+	\item[(ii)]Significado físico: $\underline{\textit{c}}t$ como a coordenada $x_1$.
+	Para vetores tipo-luz: $\underline{\textit{c}}t = \sqrt{{x_2}^2 + {x_3}^2}$ \pause
+	
+	\ \\
+	
+	
+	\item[(iii)]O que diz a teoria da relatividade: não existem velocidades superiores a da luz; \pause
+	
+	\ \\
+	
+	\item[(iv)]Interpretação geométrica.
+	
+	\end{enumerate}}
+	
+\frame{\frametitle{Reparametrização de Curvas no $\mathbb{R}^3_1$}
+\begin{block}{Parametrização pelo comprimento de arco}
+\justifying
+Uma curva regular $c\colon I \to \mathbb{R}^3_1$ tipo-tempo ou tipo-espaço, pode ser reparametrizada pelo comprimento de arco, isto é, existe  $\beta\colon J \rightarrow \mathbb{R}^3_1$ uma reparametrização de $c$ tal que ${\langle {\dot{\beta}},{\dot{\beta}}\rangle}_1 = \pm 1$, para todo o domínio de $\beta$.
+\end{block}}
+
+\frame{\frametitle{Equações de Frenet no espaço de Minkowski}
+\justifying
+O \textbf{produto vetorial} de dois vetores $A, B \in \mathbb{R}^3_1$ é definido como o único vetor $A \times B \in \mathbb{R}^3_1$ que satisfaz: $ {\langle {A \times B},{C}\rangle}_1 = Det(A,B,C),$ \linebreak $\forall C \in \mathbb{R}^3_1.$ \pause
+\begin{block}{Base ortonomal para $\mathbb{R}^3_1$}
+Para dois vetores $e_1$ e $e_2$, tais que ${\langle {e_i},{e_i}\rangle}_1 = \pm 1$ e ${\langle {e_1},{e_2}\rangle}_1 = 0$, definimos $e_3:= e_1 \times e_2$. Os três vetores formam uma base ortonormal.
+\end{block}}
+
+\frame{\frametitle{Equações de Frenet no espaço de Minkowski}
+\begin{block}{Decomposição de um vetor no espaço}
+\justifying
+ Seja $\epsilon,\eta \in \left\{1,-1\right\}$ com ${\langle e_1, e_1\rangle}_1 = \epsilon, \, {\langle e_2, e_2\rangle}_1 = \eta \,\,$ segue que
+$ {\langle e_3, e_3\rangle}_1 = -\epsilon\eta$. Sendo assim, qualquer vetor do espaço $X$ do espaço pode ser decomposto em três componentes:
+ $$ X = \epsilon{\langle {X},{e_1}\rangle}_1e_1 + \eta{\langle {X},{e_2}\rangle}_1e_2 - \eta \epsilon{\langle {X},{e_3}\rangle}_1e_3.$$
+\end{block}}
+
+\frame{\frametitle{Equações de Frenet no espaço de Minkowski}
+\begin{block}{Teorema}
+\justifying
+Seja $c$ uma curva tipo-espaço ou tipo-tempo parametrizada pelo comprimento de arco. O referencial ortonormal de Frenet da curva é dado por $e_1 = \dot{c}$, $e_2 = \dfrac{\ddot{c}}{\sqrt{|{\langle \ddot{c},\ddot{c}}\rangle_1}|}$ e $e_3 = e_1 \times e_2$.  Assim, são definidas as seguintes equações de Frenet: \begin{center}
+		$\begin{pmatrix}
+		{\dot{{e_1}}} \\ {\dot{{e_2}}} \\ {\dot{{e_3}}}
+		\end{pmatrix}$ = $\begin{pmatrix}
+		0 & \kappa\eta & 0 \\ -\kappa\epsilon & 0 & -\tau\epsilon\eta \\ 0 & -\tau\eta & 0
+		\end{pmatrix}$ $\begin{pmatrix} {e_1} \\ {e_2} \\ {e_3} \end{pmatrix}$,\\
+		\end{center} 
+		
+\noindent onde as quantidades $\kappa$ e $\tau$, chamadas \textit{curvatura} e \textit{torção}, são definidas pelas seguintes equações: \begin{center}
+		$\kappa = {\langle \dot{{e_1}}, e_2 \rangle}_1$ \,e\, $\tau = {\langle \dot{{e_2}}, e_3 \rangle}_1$.
+		\end{center}	
+\end{block}}
+
+\frame{\frametitle{Equações de Frenet no espaço de Minkowski}
+\begin{block}{Demonstração}
+\justifying
+Como ${\langle {e_i}, e_i \rangle}_1 = \pm1$ tem-se que $\dot{{e_i}}$ é perpendicular à $e_i$. Além disso, $\dot{{e_1}}$ é paralelo à ${e_2}$ e a igualdade anterior pode ser reescrita da seguinte forma: 
+		$$\dot{{e_1}} = \ddot{c} = \epsilon{\langle {\ddot{c}},{e_1}\rangle}_1e_1 + \eta{\langle {\ddot{c}},{e_2}\rangle}_1e_2 - \eta \epsilon{\langle {\ddot{c}},{e_3}\rangle}_1e_3 = \eta\kappa{e_2}.$$
+
+\end{block}}
+
+
+\frame{\frametitle{Equações de Frenet no espaço de Minkowski}
+\begin{block}{Demonstração}
+\justifying
+Como ${\langle {e_2},{e_1}\rangle}_1 = 0$, tem-se que ${\langle \dot{{e_2}},{e_1}\rangle}_1 = {-\langle {e_2},\dot{{e_1}}\rangle}_1 = -\kappa$. E por definição ${\langle \dot{{e_2}},{e_3}\rangle}_1 = \tau$, Portanto, segue que: 
+		$$\dot{{e_2}} = \epsilon{\langle \dot{{e_2}},{e_1}\rangle}_1e_1 + \eta{\langle \dot{{e_2}},{e_2}\rangle}_1e_2 - \eta \epsilon{\langle \dot{{e_2}},{e_3}\rangle}_1e_3 = -\kappa\epsilon{e_1}  - \tau \epsilon\eta{e_3}.$$ \pause
+		
+
+		Finalmente tem-se que:  $$\dot{{e_3}} = \epsilon{\langle \dot{{e_3}},{e_1}\rangle}_1e_1 + \eta{\langle \dot{{e_3}},{e_2}\rangle}_1e_2 - \eta \epsilon{\langle \dot{{e_3}},{e_3}\rangle}_1e_3 = - \tau\eta{e_2}.$$
+
+\end{block}}
+
+\frame{\frametitle{Comparação com o espaço euclidiano}
+
+\begin{block}{Equações no $\mathbb{R}^3$}
+\justifying
+Para uma curva $\alpha \in \mathbb{R}^3$, parametrizada por comprimento de arco:
+ $\begin{pmatrix}
+		{\dot{{\overline{e}}}}_1 \\ {\dot{{\overline{e}}}}_2 \\ {\dot{{\overline{e}}}}_3
+		\end{pmatrix}$ = $\begin{pmatrix}
+		0 & \kappa & 0 \\ -\kappa & 0 & \tau \\ 0 & -\tau & 0
+		\end{pmatrix}$ $\begin{pmatrix} {\overline{e}_1} \\ {\overline{e}_2} \\ {\overline{e}_3} \end{pmatrix},$
+		$\overline{\kappa} = \|\ddot{\alpha}\|$ \,e\, $\overline{\tau} = {\langle \dot{{\overline{e}}}_2, e_3 \rangle}$.
+		\end{block} \pause
+		
+		\begin{block}{Equações no $\mathbb{R}^3_1$}
+		\justifying
+		Para uma curva $c \in \mathbb{R}^3_1$, parametrizada por comprimento de arco:
+		$\begin{pmatrix}
+		{\dot{{e_1}}} \\ {\dot{{e_2}}} \\ {\dot{{e_3}}}
+		\end{pmatrix}$ = $\begin{pmatrix}
+		0 & \kappa\eta & 0 \\ -\kappa\epsilon & 0 & -\tau\epsilon\eta \\ 0 & -\tau\eta & 0
+		\end{pmatrix}$ $\begin{pmatrix} {e_1} \\ {e_2} \\ {e_3} \end{pmatrix}$,\\
+		
+		$\kappa = {\langle \dot{{e_1}}, e_2 \rangle}_1$ \,e\, $\tau = {\langle \dot{{e_2}}, e_3 \rangle}_1$.
+		
+		\end{block}}
+		
+\frame{\frametitle{Comparação com o espaço euclidiano}
+\begin{block}{círculo no $\mathbb{R}^3$}
+\justifying
+Tomemos o exemplo da curva $\alpha(t) = (0,cos(t),sen(t))$. Temos que $\dot{\alpha}(t) = (0,-sen(t),cos(t))$ e $\ddot{\alpha}(t) = (0,-cos(t),-sen(t))$. Como $\overline{e}_1 = \dot{\alpha}(t)$, $\overline{e}_2 = \ddot{\alpha}(t)$ e $\overline{e}_3 = (1,0,0)$, verifica-se que $\overline{\kappa} = 1$ e $\overline{\tau} = 0$. 
+\end{block} \pause
+\begin{block}{círculo no $\mathbb{R}^3_1$}
+\justifying
+No espaço de Minskowski, o mesmo círculo parametrizado por $c(t) = (0,cos(t),sen(t))$, apresenta $e_1 = \overline{e}_1$, $e_2 = \overline{e}_2$, mas $e_3 = - \overline{e}_3 = (-1,0,0)$. Para este círculo, a curvatura e torção no $\mathbb{R}^3_1$ e $\mathbb{R}^3$ coincidem, e como $\epsilon = 1$, $\eta = 1$, as equações de Frenet para $c$ e $\alpha$ são idênticas.
+\end{block}	  
+}
+
+\frame{\frametitle{Referências}
+[1]WOLFGANG, K. \textbf{Differential Geometry:} Curves - Surfaces - Manifolds.  Providence: AMS, 2006.
+
+\ \\
+
+[2]O'NEIL, B. \textbf{Semi-Riemannian Geometry:} With Applications to Relativity. San Diego: Academic Press, 1983.
+
+\ \\
+ 	
+[3]CARMO, M. P. \textbf{Geometria Diferencial de Curvas e Superfícies}. Rio de Janeiro: SBM, 2014.
+
+\ \\
+ 	
+[4]TENENBLAT, K. \textbf{Introdução à Geometria Diferencial}. São Paulo: Blucher, 2008.
+	}
+\end{document}
+
+\end{document}
