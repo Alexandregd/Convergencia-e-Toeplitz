@@ -1,0 +1,82 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usetheme[height=8mm]{Rochester}
+\usecolortheme[RGB={255,150,0}]{structure}
+\usepackage{fancybox}
+\setbeamertemplate{navigation symbols}{}
+\usepackage{graphicx}
+\usepackage[brazilian]{babel}
+\usepackage{helvet}
+\usepackage{ragged2e}
+\beamertemplatenavigationsymbolsempty
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\l}{\longrightarrow}
+\title{Convergência de Operadores e o Teorema de Toeplitz}
+\author{Alexandre do Amaral \and João Vitor Parada Poletto\\ \small{Professor: José Carlos Corrêa Eidam}}
+\date{20 de novembro de 2019}
+\institute{Universidade Federal do Paraná}
+\begin{document}
+\frame{\titlepage \begin{figure}[br]
+\includegraphics[scale=0.12]{logo-dmat.png}
+\end{figure}}
+
+\frame{\frametitle{Definições}
+
+\begin{block}{Convergência de sequências de operadores}
+\justifying
+Seja $X$ e $Y$ espaços normados. Uma sequência de operadores $(T_n)$ de operadores $T_n \in B(X,Y)$ é dita:
+\justifying
+\begin{enumerate}
+	\item[(1)]\textbf{uniformemente operador convergente} se existe um operador $T: X \l Y$ tal que $\Vert T_n - T \Vert \l 0$. \pause
+	\item[(2)]\textbf{fortemente operador convergente} se existe um operador $T: X \l Y$ tal que $\Vert T_nx - Tx \Vert \l 0$ para todo $x \in X$. \pause
+	\item[(3)] \textbf{fracamente operador convergente} se existe um operador $T: X \l Y$ tal que $\vert f(T_nx) - (Tx) \vert \l 0$ para todo $x \in X$ e para todo $f \in Y'$. \pause \linebreak \\
+	
+	$T$ é chamado o operador limite \textit{uniforme, forte e fraco} de $T_n$, respectivamente.
+	\end{enumerate}
+
+\end{block}}
+
+\frame{\frametitle{Exemplos}
+
+No espaço $l^2$ nós consideramos a sequência $(T_n)$, onde $T_n: l^2 \l l^2$ é definido por:
+
+		$$ T_nx = (\underbrace{0,0,...,0}_{n zeros},\xi_{n+1}, \xi_{n+2}, \xi_{n+3},...);$$
+		
+com $x = (\xi_1, \xi_2,...) \in l^2$. Este operador é linear e limitado e é fortemente convergente para 0 mas não é uniformemente convergente.}
+
+\frame{\frametitle{Exemplos}
+
+ Ainda no espaço $l^2$, uma outra sequência $T_n$ de operadores $T_n: l^2 \l l^2$ é definida por:
+
+		$$ T_nx = (\underbrace{0,0,...,0}_{n zeros},\xi_{1}, \xi_{2}, \xi_{3},...);$$
+		
+	com $x = (\xi_1, \xi_2,...) \in l^2$. O operador $T_n$ é linear e limitado e mostraremos que ele é fracmente operador convergente para $0$ mas não fortemente. Para isso recorramos ao Teorema de Riesz's.}
+	
+\frame{\frametitle{Teorema}
+
+\begin{block}{Teorema de Riesz's (Funcionais no espaço de Hilbert)}
+\justifying
+	Todo funcional linear $f$ em um espaço de Hilbert pode ser representado em termos do produto interno, chamado:
+	
+	$$f(x) = {\langle {x},{z}\rangle}$$
+	
+onde $z$ depende de $f$, é unicamente determinado pelo funcional e tem norma:
+
+$$ \Vert z \Vert = \Vert f \Vert $$
+
+\end{block}}
+
+\frame{\frametitle{Exemplos}
+
+ Qualquer funcional $f \in l^2$ pode ser escrito como 
+ 
+ $$f(x) = {\langle {x},{z}\rangle} = \sum_{j = 1}^{\infty} \xi_j \overline{\eta}_j $$
+ 
+ onde $z = (\eta_j) \in l^2$. Desta forma, chamando $ J = n + k $
+ 
+  $$f(T_nx) = \langle {T_nx},{z}\rangle = \sum_{j = n + 1}^{\infty} \xi_{j - n} \overline{\eta}_j = \sum_{k = 1}^{\infty} \xi_{k} \overline{\eta}_{n + k} $$}
+	
+\end{document}
+
+\end{document}
