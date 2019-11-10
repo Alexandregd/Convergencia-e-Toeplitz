@@ -28,9 +28,9 @@
 Seja $X$ e $Y$ espaços normados. Uma sequência de operadores $(T_n)$ de operadores $T_n \in B(X,Y)$ é dita:
 \justifying
 \begin{enumerate}
-	\item[(1)]\textbf{uniformemente operador convergente} se existe um operador $T: X \l Y$ tal que $\Vert T_n - T \Vert \l 0$. \pause
+	\item[(1)]\textbf{uniformemente operador convergente} se existe um operador $T : X \l Y$ tal que $\Vert T_n - T \Vert \l 0$. \pause
 	\item[(2)]\textbf{fortemente operador convergente} se existe um operador $T: X \l Y$ tal que $\Vert T_nx - Tx \Vert \l 0$ para todo $x \in X$. \pause
-	\item[(3)] \textbf{fracamente operador convergente} se existe um operador $T: X \l Y$ tal que $\vert f(T_nx) - (Tx) \vert \l 0$ para todo $x \in X$ e para todo $f \in Y'$. \pause \linebreak \\
+	\item[(3)] \textbf{fracamente operador convergente} se existe um operador $T: X \l Y$ tal que $\vert f(T_nx) - f(Tx) \vert \l 0$ para todo $x \in X$ e para todo $f \in Y'$. \pause \linebreak \\
 	
 	$T$ é chamado o operador limite \textit{uniforme, forte e fraco} de $T_n$, respectivamente.
 	\end{enumerate}
@@ -38,24 +38,24 @@ Seja $X$ e $Y$ espaços normados. Uma sequência de operadores $(T_n)$ de operad
 \end{block}}
 
 \frame{\frametitle{Exemplos}
-
+\justifying
 No espaço $l^2$ nós consideramos a sequência $(T_n)$, onde $T_n: l^2 \l l^2$ é definido por:
 
-		$$ T_nx = (\underbrace{0,0,...,0}_{n zeros},\xi_{n+1}, \xi_{n+2}, \xi_{n+3},...);$$
+		$$ T_nx = (\underbrace{0,0,\cdots,0}_{n \, zeros},\xi_{n+1}, \xi_{n+2}, \xi_{n+3},\cdots);$$
 		
-com $x = (\xi_1, \xi_2,...) \in l^2$. Este operador é linear e limitado e é fortemente convergente para 0 mas não é uniformemente convergente.}
+com $x = (\xi_1, \xi_2,\cdots) \in l^2$.\pause Este operador é linear e limitado e é fortemente convergente para 0 mas não é uniformemente convergente.}
 
 \frame{\frametitle{Exemplos}
-
+\justifying
  Ainda no espaço $l^2$, uma outra sequência $T_n$ de operadores $T_n: l^2 \l l^2$ é definida por:
 
-		$$ T_nx = (\underbrace{0,0,...,0}_{n zeros},\xi_{1}, \xi_{2}, \xi_{3},...);$$
+		$$ T_nx = (\underbrace{0,0,\cdots,0}_{n \, zeros},\xi_{1}, \xi_{2}, \xi_{3},\cdots);$$
 		
-	com $x = (\xi_1, \xi_2,...) \in l^2$. O operador $T_n$ é linear e limitado e mostraremos que ele é fracmente operador convergente para $0$ mas não fortemente. Para isso recorramos ao Teorema de Riesz's.}
+	com $x = (\xi_1, \xi_2,\cdots) \in l^2$. \pause O operador $T_n$ é linear e limitado e mostraremos que ele é fracmente operador convergente para $0$ mas não fortemente. Para isso recorramos ao Teorema de Riesz.}
 	
 \frame{\frametitle{Teorema}
-
-\begin{block}{Teorema de Riesz's (Funcionais no espaço de Hilbert)}
+\justifying
+\begin{block}{Teorema de Riesz (Funcionais no espaço de Hilbert)}
 \justifying
 	Todo funcional linear $f$ em um espaço de Hilbert pode ser representado em termos do produto interno, chamado:
 	
@@ -68,15 +68,117 @@ $$ \Vert z \Vert = \Vert f \Vert $$
 \end{block}}
 
 \frame{\frametitle{Exemplos}
-
+\justifying
  Qualquer funcional $f \in l^2$ pode ser escrito como 
  
  $$f(x) = {\langle {x},{z}\rangle} = \sum_{j = 1}^{\infty} \xi_j \overline{\eta}_j $$
  
- onde $z = (\eta_j) \in l^2$. Desta forma, chamando $ J = n + k $
+ onde $z = (\eta_j) \in l^2$. \pause Desta forma, chamando $ j = n + k $
  
-  $$f(T_nx) = \langle {T_nx},{z}\rangle = \sum_{j = n + 1}^{\infty} \xi_{j - n} \overline{\eta}_j = \sum_{k = 1}^{\infty} \xi_{k} \overline{\eta}_{n + k} $$}
-	
-\end{document}
+  $$f(T_nx) = \langle {T_nx},{z}\rangle = \sum_{j = n + 1}^{\infty} \xi_{j - n} \overline{\eta}_j = \sum_{k = 1}^{\infty} \xi_{k} \overline{\eta}_{n + k} $$ \pause
+  Usando a desigualdade de Holder para somas, temos que:
+  
+  $$\vert f(T_nx) \vert = \vert \sum_{k = 1}^{\infty} \xi_{k} \overline{\eta}_{n + k} \vert \leq \sum_{k = 1}^{\infty} \vert \xi_{k} \overline{\eta}_{n + k} \vert \leq $$
+  
+  $$ {\left({\sum_{k = 1}^{\infty} {\vert \xi_{k} \vert}^2}\right)}^{1/2}  {\left({\sum_{m = n +1}^{\infty} {\vert \xi_{m} \vert}^2}\right)}^{1/2} $$
+   }
+   
+\frame{\frametitle{Exemplos}
+\justifying
+Elevando ambos os lados ao quadrado:
+ $$ {\vert f(T_nx) \vert} = {\left({\sum_{k = 1}^{\infty} {\vert \xi_{k} \vert}^2}\right)}  {\left({\sum_{m = n +1}^{\infty} {\vert \xi_{m} \vert}^2}\right)} $$
+Como o lado direito da desigualdade vai a $0$, temos que $f(T_nx) \l 0$. Consequentemente, $(T_n)$ é fracamamente operador convergente para $0$. \pause
 
+Porém $T_nx$ não é fortemente operador convergente, basta considerarmos a sequência $x = (1,0,0,\cdots)$
+}
+
+\frame{\frametitle{Convergência de funcionais}
+\justifying
+E sobre convergência de funcionais? \\ \pause
+
+Como funcionais são operadores lineares, as definições citadas anterioremente se aplicam. Além disso, para uma sequência de funcionais, convergência operador forte e fraca são equivalentes, basta relembrar o seguinte teorema: 
+}
+
+\frame{\frametitle{Teorema}
+\justifying
+\begin{block}{Teorema (convergência forte e fraca)}
+Seja $(x_n)$ uma sequência em um espaço normado de dimensão $X$. Então
+\begin{enumerate}
+\item[a)] Convergência forte implica convergência fraca com o mesmo limite.
+\item[b)] A recíproca de \textit{a} não é sempre verdadeira.
+\item[c)] \textbf{Se dim $X \leq \infty $, convergência fraca implica convergência forte.}
+ \end{enumerate}
+
+\end{block}
+}
+
+\frame{\frametitle{Convergência de funcionais}
+\justifying
+Para uma sequência de funcionais $f_n$ temos que $f_nx \in F$ para todo $ x \in X$. \pause
+
+Então, assumindo que exista um funcional $f$ para o qual a sequência de funcionais converge fracamente significa que  para cada  $x \in X$ e $g \in F'$, temos que:
+ $\Vert f_n - f \Vert \l 0 \iff \vert g(f_nx) - g(fx) \vert$ pelo item c do teorema anterior. \\
+ 
+\pause Por esse motivo, há as seguintes definições:
+ 
+ }
+ 
+\frame{\frametitle{Convergência de funcionais}
+\justifying
+\begin{block}{Definção (forte e fraca* convergência de uma sequência de funcionais)} 
+Seja $f_n$ uma sequência de funcionais lineares limitados no espaço normado $X$. Então:
+\begin{enumerate}
+\item[(a)] Convergência forte de $f_n$ significa que existe  um $f \in X'$ tal que $ \Vert f_n - f \Vert \l 0$. Escrevemos: 
+	$$f_n \l f.$$ \pause
+\item[(b)] Convergência fraca* de $f_n$ significa que existe um $f \in X'$ tal que $f_n(x) \l f(x)$ para todo $x \in X$. Escrevemos: \[f_n\stackrel{\scriptscriptstyle w^*}{\longrightarrow} f\]\pause
+$f$ em \textit{(a)} e \textit{(b)} é chamado limite forte e limie fraco* de $f_n$, respectivamente.
+\end{enumerate}
+
+\end{block}
+	}
+	
+\frame{\frametitle{Convergência de operadores}
+\justifying
+Voltando para convergência de operadores $T_n \in B(X,Y)$ o que pode ser dito do operador limite? \\ \pause
+
+Em primeiro lugar, convergência uniforme implica que $T: X \l Y$ nas definições anteriores é limitado. \\ \pause
+
+Em segundo lugar, se a convergência é forte ou fraca o operador ainda é linear, mas não necessariamente limitado.
+}
+
+\frame{\frametitle{Exemplo}
+\justifying
+O espaço $X$ das sequências $x = (\xi_j)$ no $l^2$ com somente finitos termos não nulos, na métrica do $l^2$ não é completo. \pause
+
+É possível construir uma sequência de operadores nesse espaço que converge fortemente para um operador ilimitado. \pause
+
+Tal sequência é: $$T_nx = (\xi_1, 2\xi_2, 3\xi_3,\cdots, n\xi_n,\xi_{n+1},\xi_{n+2},\cdots).$$
+ \pause
+
+Porém, se $X$ é completo, convergência operador forte implica que o limite dos operadores é um operador limitado. 
+}
+
+\frame{\frametitle{Lema}
+\justifying
+\begin{block}{Lema (Convergência forte de operadores}
+Seja $T_n \in B(X,Y)$ uma sequência de operadores, onde $X$ é um espaço de Banach e $Y$ é um espaço normado. Se $T_n$ é fortemente operador convergente com limite $T$, então $T \in B(X,Y).$ \pause
+
+\textbf{Demonstração:} A linearidade de $T$ segue direto da linearidade de $T_n$. \pause
+
+Como  $T_nx \l Tx$ para cada $x \in X$, segue que a sequência $(T_nx)$ é limitada para cada $x$, visto que toda sequência convergente é limitada.
+
+
+
+\end{block}
+}
+
+\frame{\frametitle{Lema}
+\justifying
+\begin{block}{Lema (Convergência forte de operadores}
+Como $X$ é completo, $(\Vert T_n \Vert)$ é limitado pelo teorema da limitação uniforme. Digamos então que $(\Vert T_n \Vert) \leq c$ para todo $n$. Daí segue o resultado anunciado. $\blacksquare$
+
+
+
+\end{block}
+}
 \end{document}
