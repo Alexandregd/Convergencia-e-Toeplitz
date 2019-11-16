@@ -181,4 +181,152 @@ Como $X$ é completo, $(\Vert T_n \Vert)$ é limitado pelo teorema da limitaçã
 
 \end{block}
 }
+
+\frame{\frametitle{Métodos de Somábilidade}
+  Com intuito de generalizar a noção de convergência de sequencias podemos utilizar métodos de somabilidade, que associam uma sequencia com outra possivelmente convergente.
+  \begin{block}{Métodos matriciais}
+    Um método de somábilidade é nomeado matricial se é possível escreve-lo na forma:
+    \begin{equation*}
+      y=Ax
+    \end{equation*}
+    Onde $y$ e $x$ são vetores coluna infinitos e $A$ é uma matriz infinita.
+  \end{block}
+}
+
+\frame{\frametitle{Método de Cesàro}
+  \begin{block}{Definição}
+    O método de Cesàro é a criação de uma nova sequencia utilizando os a media dos n primeiro termos da sequencia e tomando o valor que esta sequencia converge para como o valor que a sequencia original converge.
+  \end{block}
+  \begin{block}{Representação em somatório}
+    Dada uma sequencia $x=(\xi_n)_n$ temos que $y=(\eta_n)_n$ é tal que
+    \begin{equation*}
+      \eta_n=\sum_{k=1}^{\infty}\alpha_{nk}\xi_k
+    \end{equation*}
+    \begin{equation*}
+      \alpha_{nk}=
+      \begin{cases}
+        \frac{1}{n} &\quad\text{se}\quad k\leq n \\
+        0 &\quad\text{se}\quad k>n
+      \end{cases}
+    \end{equation*}
+  \end{block}
+}
+
+\frame{\frametitle{Representação matricial do método de Cesàro}
+  \begin{equation*}
+  {\Large
+    A=
+    \begingroup
+    \renewcommand*{\arraystretch}{1.5}
+    \begin{bmatrix}
+      \frac{1}{1} & 0                 & 0 & 0 & 0 & \\
+      \frac{1}{2} & \frac{1}{2} & 0                 & 0 & 0 & \dots\\
+      \frac{1}{3} & \frac{1}{3} & \frac{1}{3} & 0                 & 0 & \\
+      \frac{1}{4} & \frac{1}{4} & \frac{1}{4} & \frac{1}{4} & 0 & \\
+                         & \vdots         &                     &                    & \ddots &
+    \end{bmatrix}
+    \endgroup
+  }
+  \end{equation*}
+}
+
+\frame{\frametitle{Regularidade e notação}
+   Um método matricial pode ser chamado de A-método, se todas as linhas e $y=(\eta_n)_n$ convergem no sentido usual, o limite é denominado A-limite de $x$ e $x$ é dito A-somável, a conjunto de todas as sequencias somáveis é denominado A-domínio.
+   \begin{block}{Regularidade}
+     Um método matricial é dito regular se toda sequencia convergente pertence ao seu domínio e seu A-limite coincide com o limite usual da sequencia.
+   \end{block}
+}
+
+\frame{\frametitle{Teorema de Toeplitz}
+  Um método matricial é regular se e somente se,
+  \begin{align}
+    &\lim_{n\to\infty}\alpha_{nk}=0 \label{lim0}\\
+    &\lim_{n\to\infty}\sum_{k=1}^{\infty}\alpha_{nk}=1 \label{limsum1}\\
+    &\sum_{k=1}^{\infty}\left\lvert\alpha_{nk}\right\rvert \leq \gamma \label{sumgamma}
+  \end{align}
+}
+
+\frame{\frametitle{Prova}
+  \begin{block}{Regularidade$\implies$ Equação (\ref{lim0})}
+    Dada a sequencia $x_k$ com todo termo igual a $0$ exceto o termo $k$ que é igual a $1$, temos que $\eta_n=\alpha_{nk}$
+  \end{block}
+  \begin{block}{Regularidade$\implies$ Equação (\ref{limsum1})}
+    Dada a sequencia $x$ com todo termo igual a $1$ temos que
+    \begin{equation*}
+      \eta_n=\sum_{k=1}^{\infty}\alpha_{nk}
+    \end{equation*}
+  \end{block}
+}
+
+\frame{\frametitle{Prova}
+  \begin{block}{Regularidade$\implies$ Equação (\ref{sumgamma})}
+    Dado o espaço metrico $c$ com a norma do $\ell^{\infty}$ \\
+    definimos funcionais lineares
+    \begin{equation*}
+      f_{nm}(x)=\sum_{k=1}^m\alpha_{nk}\xi_k \quad m\text{, }n = 1\text{,}2\text{,}\dots
+    \end{equation*}
+    então temos que o método define funcionais lineares
+    \begin{equation*}
+      \eta_n=f_n(x)=\sum_{k=1}^{\infty}\alpha_{nk}\xi_k \quad n=1\text{,}2\text{,}\dots
+    \end{equation*}
+    \begin{equation*}
+      f_{nm}(x)\to f_n(x) \quad \text{ou seja} \quad f_{nm}\overset{w^\ast}{\to}f_n
+    \end{equation*}
+  \end{block}
+}
+
+\frame{\frametitle{Prova}
+  \begin{block}{Regularidade$\implies$ Equação (\ref{sumgamma})}
+    \begin{equation*}
+      \xi_k^{(n,m)}=
+      \begin{cases}
+        \frac{\alpha_{nk}}{\left\lvert\alpha_{nk}\right\rvert} &\quad \text{se} \quad k\leq m \quad \text{e} \quad \alpha_{nk}\neq 0 \\
+        0 &\quad \text{se} \quad k>m \quad \text{ou} \quad \alpha_{nk}=0
+      \end{cases}
+    \end{equation*}
+    então temos
+    \begin{equation*}
+      \sum_{k=1}^m\left\lvert\alpha_{nk}\right\rvert=f_{nm}(x_{nm})\leq\left\lVert f_{nm}\right\rVert
+    \end{equation*}
+    \begin{equation*}
+      \sum_{k=1}^{\infty}\left\lvert\alpha_{nk}\right\rvert\leq\left\lVert f_n\right\rVert\leq\gamma
+    \end{equation*}
+  \end{block}
+}
+
+\frame{\frametitle{Prova}
+  \begin{block}{Equações (\ref{lim0}), (\ref{limsum1}), (\ref{sumgamma}) $\implies$ Regularidade}
+    Definimos o funcional linear
+    \begin{equation*}
+      f(x)=\xi=\lim_{k\to\infty}\xi_k
+    \end{equation*}
+    que é limitado pois
+    \begin{equation*}
+      \left\lvert f(x)\right\rvert\leq\left\lVert x\right\rVert
+    \end{equation*}
+    Dado o conjunto $M$ das sequencias quase constantes, que é denso, e $x\in M$ com todo termo igual apos $j$
+  \end{block}
+}
+
+\frame{\frametitle{Prova}
+  \begin{block}{Equações (\ref{lim0}), (\ref{limsum1}), (\ref{sumgamma}) $\implies$ Regularidade}
+    \begin{align*}
+      \eta_n=f_n(x)&=\sum_{k=1}^{j-1}\alpha_{nk}\xi_k+\xi\sum_{k=j}^{\infty}\alpha_{nk} \\
+                             &=\sum_{k=1}^{j-1}\alpha_{nk}(\xi_k-\xi)+\xi\sum_{k=1}^{\infty}\alpha_{nk} \\
+                             &\text{Pelas Equações (\ref{lim0}), (\ref{limsum1})} \\
+      \eta_n=f_n(x)&\to 0+\xi*1=\xi=f(x)
+    \end{align*}
+  \end{block}
+}
+
+\frame{\frametitle{Prova}
+  \begin{block}{Equações (\ref{lim0}), (\ref{limsum1}), (\ref{sumgamma}) $\implies$ Regularidade}
+    E pela Equação (\ref{sumgamma}) temos
+    \begin{equation*}
+      \left\lvert f_n(x)\right\rvert\leq\left\lVert x\right\rVert\sum_{k=1}^{\infty}\left\lvert\alpha_{nk}\right\rvert\leq\gamma\left\lVert x\right\rVert
+    \end{equation*}
+    então $f_n$ é limitado, e como $f_n(x)\to f(x),x\in M$ temos $f_n\overset{w^\ast}{\to}f$ então se $f(x)$ existe $\eta_n\to\xi$ e portanto é regular.
+  \end{block}
+}
+
 \end{document}
