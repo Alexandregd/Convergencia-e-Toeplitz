@@ -173,14 +173,51 @@ Como  $T_nx \l Tx$ para cada $x \in X$, segue que a sequência $(T_nx)$ é limit
 }
 
 \frame{\frametitle{Lema}
+\begin{block}{Lema (Convergência forte de operadores)}
 \justifying
-\begin{block}{Lema (Convergência forte de operadores}
 Como $X$ é completo, $(\Vert T_n \Vert)$ é limitado pelo teorema da limitação uniforme. Digamos então que $\Vert T_n \Vert \leq c$ para todo $n$. Então, $\Vert T_nx \Vert \leq \Vert Tn \Vert \Vert x \Vert \leq c \Vert x \Vert .$ Daí segue o resultado anunciado. $\blacksquare$
 
 
 
 \end{block}
 }
+
+\frame{\frametitle{Teorema}
+
+\begin{block}{Convergência forte}
+	Uma sequência $(T_n)$ de operadores $T_n \in B(X,Y)$, onde $X$ e $Y$ são espaços de Banach, é fortemente convergente se, e somente se, são satisfeitos:
+\begin{enumerate} \pause
+\item[(A)] A sequência $(\Vert T_n \Vert )$ é limitada. \pause
+\item[(B)] A sequência $(T_nx)$ é Cauchy em $Y$ para todo $x$ em um conjunto  maximal $M$ de $X$.
+\end{enumerate}
+
+\end{block}
+
+}
+
+\frame{\frametitle{Teorema}
+
+\justifying
+\textbf{Demonstração:} Se $T_nx \l Tx$ para cada $x \in X$, então $(A)$ segue do lema anterior e $(B)$ é verificado facilmente. \pause
+
+	Reciprocamente, assumindo que $(A)$ e $(B)$ são satisfeitos existe $c$ tal que $\Vert T_n \Vert \leq c$ para todo $n$. \pause Seja agora $x \in X$ e $\epsilon > 0$. Como $M$ é maximal em $X$ segue que span $M$ é denso em $X$. Então existe $y \in span M$ tal que $$\Vert x - y \Vert < \dfrac{\epsilon}{3c}.$$
+
+}
+
+\frame{\frametitle{Teorema}
+Como $y \in span M$, a sequência $(T_ny)$ é Cauchy em $(B)$ Consequentemente, existe um $N$ tal que $$\Vert T_ny - T_my \Vert \leq \dfrac{\epsilon}{3}.$$ para $m,n > N$. \pause
+
+Utilizando as desigualdades triangulares temos o resultado provado. $\blacksquare$
+}
+
+\frame{\frametitle{Aplicações}
+
+Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos aplicações interessantes, como veremos a seguir.
+}
+
+
+
+
 
 \frame{\frametitle{Métodos de Somábilidade}
   Com intuito de generalizar a noção de convergência de sequencias podemos utilizar métodos de somabilidade, que associam uma sequencia com outra possivelmente convergente.
