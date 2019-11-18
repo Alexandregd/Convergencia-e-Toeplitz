@@ -28,9 +28,9 @@
 Seja $X$ e $Y$ espaços normados. Uma sequência de operadores $(T_n)$ de operadores $T_n \in B(X,Y)$ é dita:
 \justifying
 \begin{enumerate}
-	\item[(1)]\textbf{uniformemente operador convergente} se existe um operador $T : X \l Y$ tal que $\Vert T_n - T \Vert \l 0$. \pause
-	\item[(2)]\textbf{fortemente operador convergente} se existe um operador $T: X \l Y$ tal que $\Vert T_nx - Tx \Vert \l 0$ para todo $x \in X$. \pause
-	\item[(3)] \textbf{fracamente operador convergente} se existe um operador $T: X \l Y$ tal que $\vert f(T_nx) - f(Tx) \vert \l 0$ para todo $x \in X$ e para todo $f \in Y'$. \pause \linebreak \\
+	\item[(1)]\textbf{uniformemente convergente} se existe um operador $T : X \l Y$ tal que $\Vert T_n - T \Vert \l 0$. \pause
+	\item[(2)]\textbf{fortemente convergente} se existe um operador $T: X \l Y$ tal que $\Vert T_nx - Tx \Vert \l 0$ para todo $x \in X$. \pause
+	\item[(3)] \textbf{fracamente convergente} se existe um operador $T: X \l Y$ tal que $\vert f(T_nx) - f(Tx) \vert \l 0$ para todo $x \in X$ e para todo $f \in Y'$. \pause \linebreak \\
 	
 	$T$ é chamado o operador limite \textit{uniforme, forte e fraco} de $T_n$, respectivamente.
 	\end{enumerate}
@@ -51,7 +51,7 @@ com $x = (\xi_1, \xi_2,\cdots) \in l^2$.\pause Este operador é linear e limitad
 
 		$$ T_nx = (\underbrace{0,0,\cdots,0}_{n \, zeros},\xi_{1}, \xi_{2}, \xi_{3},\cdots);$$
 		
-	com $x = (\xi_1, \xi_2,\cdots) \in l^2$. \pause O operador $T_n$ é linear e limitado e mostraremos que ele é fracmente operador convergente para $0$ mas não fortemente. Para isso recorramos ao Teorema de Riesz.}
+	com $x = (\xi_1, \xi_2,\cdots) \in l^2$. \pause O operador $T_n$ é linear e limitado e mostraremos que ele é fracamente convergente para $0$ mas não fortemente. Para isso recorramos ao Teorema de Riesz.}
 	
 \frame{\frametitle{Teorema}
 \justifying
@@ -80,7 +80,7 @@ $$ \Vert z \Vert = \Vert f \Vert $$
   
   $$\vert f(T_nx) \vert = \vert \sum_{k = 1}^{\infty} \xi_{k} \overline{\eta}_{n + k} \vert \leq \sum_{k = 1}^{\infty} \vert \xi_{k} \overline{\eta}_{n + k} \vert \leq $$
   
-  $$ {\left({\sum_{k = 1}^{\infty} {\vert \xi_{k} \vert}^2}\right)}^{1/2}  {\left({\sum_{m = n +1}^{\infty} {\vert \xi_{m} \vert}^2}\right)}^{1/2} $$
+  $$ {\left({\sum_{k = 1}^{\infty} {\vert \xi_{k} \vert}^2}\right)}^{1/2}  {\left({\sum_{m = n +1}^{\infty} {\vert \eta_{m} \vert}^2}\right)}^{1/2} $$
    }
    
 \frame{\frametitle{Exemplos}
@@ -96,7 +96,7 @@ Porém $T_nx$ não é fortemente operador convergente, basta considerarmos a seq
 \justifying
 E sobre convergência de funcionais? \\ \pause
 
-Como funcionais são operadores lineares, as definições citadas anterioremente se aplicam. Além disso, para uma sequência de funcionais, convergência operador forte e fraca são equivalentes, basta relembrar o seguinte teorema: 
+Como funcionais são operadores lineares, as definições citadas anterioremente se aplicam. Além disso, para uma sequência de funcionais, convergência forte e fraca são equivalentes, basta relembrar o seguinte teorema: 
 }
 
 \frame{\frametitle{Teorema}
@@ -106,7 +106,7 @@ Seja $(x_n)$ uma sequência em um espaço normado de dimensão $X$. Então
 \begin{enumerate}
 \item[a)] Convergência forte implica convergência fraca com o mesmo limite.
 \item[b)] A recíproca de \textit{a} não é sempre verdadeira.
-\item[c)] \textbf{Se dim $X \leq \infty $, convergência fraca implica convergência forte.}
+\item[c)] \textbf{Se dim $X < \infty $, convergência fraca implica convergência forte.}
  \end{enumerate}
 
 \end{block}
@@ -175,7 +175,7 @@ Como  $T_nx \l Tx$ para cada $x \in X$, segue que a sequência $(T_nx)$ é limit
 \frame{\frametitle{Lema}
 \justifying
 \begin{block}{Lema (Convergência forte de operadores}
-Como $X$ é completo, $(\Vert T_n \Vert)$ é limitado pelo teorema da limitação uniforme. Digamos então que $(\Vert T_n \Vert) \leq c$ para todo $n$. Daí segue o resultado anunciado. $\blacksquare$
+Como $X$ é completo, $(\Vert T_n \Vert)$ é limitado pelo teorema da limitação uniforme. Digamos então que $\Vert T_n \Vert \leq c$ para todo $n$. Então, $\Vert T_nx \Vert \leq \Vert Tn \Vert \Vert x \Vert \leq c \Vert x \Vert .$ Daí segue o resultado anunciado. $\blacksquare$
 
 
 
