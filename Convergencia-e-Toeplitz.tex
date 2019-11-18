@@ -219,10 +219,10 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
 
 
 
-\frame{\frametitle{Métodos de Somábilidade}
-  Com intuito de generalizar a noção de convergência de sequencias podemos utilizar métodos de somabilidade, que associam uma sequencia com outra possivelmente convergente.
+\frame{\frametitle{Métodos de Somabilidade}
+  Com intuito de generalizar a noção de convergência de sequências podemos utilizar métodos de somabilidade, que associam uma sequência com outra possivelmente convergente.
   \begin{block}{Métodos matriciais}
-    Um método de somábilidade é nomeado matricial se é possível escreve-lo na forma:
+    Um método de somabilidade é nomeado matricial se é possível escreve-lo na forma:
     \begin{equation*}
       y=Ax
     \end{equation*}
@@ -232,10 +232,10 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
 
 \frame{\frametitle{Método de Cesàro}
   \begin{block}{Definição}
-    O método de Cesàro é a criação de uma nova sequencia utilizando os a media dos n primeiro termos da sequencia e tomando o valor que esta sequencia converge para como o valor que a sequencia original converge.
+    O método de Cesàro é a sequência de medias ate o n-ésimo termo
   \end{block}
   \begin{block}{Representação em somatório}
-    Dada uma sequencia $x=(\xi_n)_n$ temos que $y=(\eta_n)_n$ é tal que
+    Dada uma sequência $x=(\xi_n)_n$ temos que sua sequência de Cesáro $y=(\eta_n)_n$ é tal que
     \begin{equation*}
       \eta_n=\sum_{k=1}^{\infty}\alpha_{nk}\xi_k
     \end{equation*}
@@ -268,9 +268,9 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
 }
 
 \frame{\frametitle{Regularidade e notação}
-   Um método matricial pode ser chamado de A-método, se todas as linhas e $y=(\eta_n)_n$ convergem no sentido usual, o limite é denominado A-limite de $x$ e $x$ é dito A-somável, a conjunto de todas as sequencias somáveis é denominado A-domínio.
+   Um método matricial pode ser chamado de A-método, se todas as linhas da matriz infinita e $y=(\eta_n)_n$ convergem no sentido usual, o limite é denominado A-limite de $x$ e $x$ é dito A-somável, o conjunto de todas as sequências somáveis é denominado A-domínio.
    \begin{block}{Regularidade}
-     Um método matricial é dito regular se toda sequencia convergente pertence ao seu domínio e seu A-limite coincide com o limite usual da sequencia.
+     Um método matricial é dito regular se toda sequência convergente pertence ao seu domínio e seu A-limite coincide com o limite usual da sequência.
    \end{block}
 }
 
@@ -284,11 +284,11 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
 }
 
 \frame{\frametitle{Prova}
-  \begin{block}{Regularidade$\implies$ Equação (\ref{lim0})}
-    Dada a sequencia $x_k$ com todo termo igual a $0$ exceto o termo $k$ que é igual a $1$, temos que $\eta_n=\alpha_{nk}$
+  \begin{block}{Regularidade$\implies$ Equação~\ref{lim0}}
+    Dada a sequência $x_k$ com todo termo igual a $0$ exceto o termo $k$ que é igual a $1$, temos que $\eta_n=\alpha_{nk}$
   \end{block}
-  \begin{block}{Regularidade$\implies$ Equação (\ref{limsum1})}
-    Dada a sequencia $x$ com todo termo igual a $1$ temos que
+  \begin{block}{Regularidade$\implies$ Equação~\ref{limsum1}}
+    Dada a sequência $x$ com todo termo igual a $1$ temos que
     \begin{equation*}
       \eta_n=\sum_{k=1}^{\infty}\alpha_{nk}
     \end{equation*}
@@ -296,7 +296,7 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
 }
 
 \frame{\frametitle{Prova}
-  \begin{block}{Regularidade$\implies$ Equação (\ref{sumgamma})}
+  \begin{block}{Regularidade$\implies$ Equação~\ref{sumgamma}}
     Dado o espaço metrico $c$ com a norma do $\ell^{\infty}$ \\
     definimos funcionais lineares
     \begin{equation*}
@@ -313,7 +313,7 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
 }
 
 \frame{\frametitle{Prova}
-  \begin{block}{Regularidade$\implies$ Equação (\ref{sumgamma})}
+  \begin{block}{Regularidade$\implies$ Equação~\ref{sumgamma}}
     \begin{equation*}
       \xi_k^{(n,m)}=
       \begin{cases}
@@ -332,7 +332,7 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
 }
 
 \frame{\frametitle{Prova}
-  \begin{block}{Equações (\ref{lim0}), (\ref{limsum1}), (\ref{sumgamma}) $\implies$ Regularidade}
+  \begin{block}{Equações~\ref{lim0},~\ref{limsum1} e~\ref{sumgamma} $\implies$ Regularidade}
     Definimos o funcional linear
     \begin{equation*}
       f(x)=\xi=\lim_{k\to\infty}\xi_k
@@ -341,24 +341,24 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
     \begin{equation*}
       \left\lvert f(x)\right\rvert\leq\left\lVert x\right\rVert
     \end{equation*}
-    Dado o conjunto $M$ das sequencias quase constantes, que é denso, e $x\in M$ com todo termo igual apos $j$
+    Dado o conjunto $M$ das sequências quase constantes, que é denso, e $x\in M$ com todo termo igual apos $j$
   \end{block}
 }
 
 \frame{\frametitle{Prova}
-  \begin{block}{Equações (\ref{lim0}), (\ref{limsum1}), (\ref{sumgamma}) $\implies$ Regularidade}
+  \begin{block}{Equações~\ref{lim0},~\ref{limsum1} e~\ref{sumgamma} $\implies$ Regularidade}
     \begin{align*}
       \eta_n=f_n(x)&=\sum_{k=1}^{j-1}\alpha_{nk}\xi_k+\xi\sum_{k=j}^{\infty}\alpha_{nk} \\
                              &=\sum_{k=1}^{j-1}\alpha_{nk}(\xi_k-\xi)+\xi\sum_{k=1}^{\infty}\alpha_{nk} \\
-                             &\text{Pelas Equações (\ref{lim0}), (\ref{limsum1})} \\
+                             &\text{Pelas Equações~\ref{lim0} e~\ref{limsum1}} \\
       \eta_n=f_n(x)&\to 0+\xi*1=\xi=f(x)
     \end{align*}
   \end{block}
 }
 
 \frame{\frametitle{Prova}
-  \begin{block}{Equações (\ref{lim0}), (\ref{limsum1}), (\ref{sumgamma}) $\implies$ Regularidade}
-    E pela Equação (\ref{sumgamma}) temos
+  \begin{block}{Equações~\ref{lim0},~\ref{limsum1} e~\ref{sumgamma} $\implies$ Regularidade}
+    E pela Equação~\ref{sumgamma} temos
     \begin{equation*}
       \left\lvert f_n(x)\right\rvert\leq\left\lVert x\right\rVert\sum_{k=1}^{\infty}\left\lvert\alpha_{nk}\right\rvert\leq\gamma\left\lVert x\right\rVert
     \end{equation*}
