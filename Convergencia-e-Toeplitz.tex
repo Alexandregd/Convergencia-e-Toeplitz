@@ -87,7 +87,7 @@ $$ \Vert z \Vert = \Vert f \Vert $$
 \justifying
 Elevando ambos os lados ao quadrado:
  $$ {\vert f(T_nx) \vert} = {\left({\sum_{k = 1}^{\infty} {\vert \xi_{k} \vert}^2}\right)}  {\left({\sum_{m = n +1}^{\infty} {\vert \xi_{m} \vert}^2}\right)} $$
-Como o lado direito da desigualdade vai a $0$, temos que $f(T_nx) \l 0$. Consequentemente, $(T_n)$ é fracamamente operador convergente para $0$. \pause
+Como o lado direito da desigualdade vai a $0$, temos que $f(T_nx)~\l~0$. Consequentemente, $(T_n)$ é fracamamente operador convergente para $0$. \pause
 
 Porém $T_nx$ não é fortemente operador convergente, basta considerarmos a sequência $x = (1,0,0,\cdots)$
 }
@@ -250,8 +250,8 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
 }
 
 \frame{\frametitle{Representação matricial do método de Cesàro}
-  \begin{equation*}
   {\Large
+  \begin{equation*}
     A=
     \begingroup
     \renewcommand*{\arraystretch}{1.5}
@@ -263,8 +263,8 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
                          & \vdots         &                     &                    & \ddots &
     \end{bmatrix}
     \endgroup
-  }
   \end{equation*}
+  }
 }
 
 \frame{\frametitle{Regularidade e notação}
@@ -369,7 +369,7 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
 
 \frame{\frametitle{Exemplos}
   \begin{block}{Inverso do método de Cesàro}
-    Podemos um inverso para o método de Cesàro pois, nota-se que
+    Podemos encontrar um inverso para o método de Cesàro notando-se que
     \begin{align*}
       \xi_1&=\eta_1 \\
       \xi_2&=2\eta_2-\eta_1 \\
@@ -393,6 +393,20 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
       \end{bmatrix}
     \end{equation*}
     }
+  \end{block}
+}
+
+\frame{\frametitle{Exemplos}
+  \begin{block}{Método $C_k$ de Cesàro}
+    Primeiramente definimos $\sigma_n^{(0)}=\xi_n$, então é definido
+    \begin{equation*}
+      \sigma_n^{(k)}=\sum_{k=1}^n\sigma_k^{(k-1)} \quad k\geq1\text{, }n=0\text{, }1\text{, }2\text{, }\dots.
+    \end{equation*}
+    Com isso, obtemos o método $C_k$,
+    \begin{align*}
+    \eta_n^{(k)}&=\frac{\sigma_n^{(k)}}{\binom{n+k}{k}} \\
+    \sigma_n^{(k)}&=\sum_{\nu=0}^{n}\binom{n+k-1-\nu}{k-1}\xi_\nu
+    \end{align*}
   \end{block}
 }
 
