@@ -86,7 +86,7 @@ $$ \Vert z \Vert = \Vert f \Vert $$
 \frame{\frametitle{Exemplos}
 \justifying
 Elevando ambos os lados ao quadrado:
- $$ {\vert f(T_nx) \vert} = {\left({\sum_{k = 1}^{\infty} {\vert \xi_{k} \vert}^2}\right)}  {\left({\sum_{m = n +1}^{\infty} {\vert \xi_{m} \vert}^2}\right)} $$
+ $$ {{\vert f(T_nx) \vert}}^2 = {\left({\sum_{k = 1}^{\infty} {\vert \xi_{k} \vert}^2}\right)}  {\left({\sum_{m = n +1}^{\infty} {\vert \eta_{m} \vert}^2}\right)} $$
 Como o lado direito da desigualdade vai a $0$, temos que $f(T_nx) \l 0$. Consequentemente, $(T_n)$ é fracamamente operador convergente para $0$. \pause
 
 Porém $T_nx$ não é fortemente operador convergente, basta considerarmos a sequência $x = (1,0,0,\cdots)$
@@ -102,7 +102,7 @@ Como funcionais são operadores lineares, as definições citadas anterioremente
 \frame{\frametitle{Teorema}
 \justifying
 \begin{block}{Teorema (convergência forte e fraca)}
-Seja $(x_n)$ uma sequência em um espaço normado de dimensão $X$. Então
+Seja $(x_n)$ uma sequência em um espaço normado $X$. Então
 \begin{enumerate}
 \item[a)] Convergência forte implica convergência fraca com o mesmo limite.
 \item[b)] A recíproca de \textit{a} não é sempre verdadeira.
@@ -117,7 +117,7 @@ Seja $(x_n)$ uma sequência em um espaço normado de dimensão $X$. Então
 Para uma sequência de funcionais $f_n$ temos que $f_nx \in F$ para todo $ x \in X$. \pause
 
 Então, assumindo que exista um funcional $f$ para o qual a sequência de funcionais converge fracamente significa que  para cada  $x \in X$ e $g \in F'$, temos que:
- $\Vert f_n - f \Vert \l 0 \iff \vert g(f_nx) - g(fx) \vert$ pelo item c do teorema anterior. \\
+ $\Vert f_n(x) - f(x) \Vert \l 0 \iff \vert g(f_nx) - g(fx) \vert$ pelo item c do teorema anterior. \\
  
 \pause Por esse motivo, há as seguintes definições:
  
@@ -131,7 +131,7 @@ Seja $f_n$ uma sequência de funcionais lineares limitados no espaço normado $X
 \item[(a)] Convergência forte de $f_n$ significa que existe  um $f \in X'$ tal que $ \Vert f_n - f \Vert \l 0$. Escrevemos: 
 	$$f_n \l f.$$ \pause
 \item[(b)] Convergência fraca* de $f_n$ significa que existe um $f \in X'$ tal que $f_n(x) \l f(x)$ para todo $x \in X$. Escrevemos: \[f_n\stackrel{\scriptscriptstyle w^*}{\longrightarrow} f\]\pause
-$f$ em \textit{(a)} e \textit{(b)} é chamado limite forte e limie fraco* de $f_n$, respectivamente.
+$f$ em \textit{(a)} e \textit{(b)} é chamado limite forte e limite fraco* de $f_n$, respectivamente.
 \end{enumerate}
 
 \end{block}
@@ -148,20 +148,20 @@ Em segundo lugar, se a convergência é forte ou fraca o operador ainda é linea
 
 \frame{\frametitle{Exemplo}
 \justifying
-O espaço $X$ das sequências $x = (\xi_j)$ no $l^2$ com somente finitos termos não nulos, na métrica do $l^2$ não é completo. \pause
+O espaço $X$ das sequências $x = (\xi_j)$ no $l^2$ com somente finitos termos não nulos, na métrica $l^2$ não é completo. \pause
 
 É possível construir uma sequência de operadores nesse espaço que converge fortemente para um operador ilimitado. \pause
 
 Tal sequência é: $$T_nx = (\xi_1, 2\xi_2, 3\xi_3,\cdots, n\xi_n,\xi_{n+1},\xi_{n+2},\cdots).$$
  \pause
 
-Porém, se $X$ é completo, convergência operador forte implica que o limite dos operadores é um operador limitado. 
+Porém, se $X$ é completo, convergência forte implica que o limite dos operadores é um operador limitado. 
 }
 
 \frame{\frametitle{Lema}
 \justifying
 \begin{block}{Lema (Convergência forte de operadores}
-Seja $T_n \in B(X,Y)$ uma sequência de operadores, onde $X$ é um espaço de Banach e $Y$ é um espaço normado. Se $T_n$ é fortemente operador convergente com limite $T$, então $T \in B(X,Y).$ \pause
+Seja $T_n \in B(X,Y)$ uma sequência de operadores, onde $X$ é um espaço de Banach e $Y$ é um espaço normado. Se $T_n$ é fortemente convergente com limite $T$, então $T \in B(X,Y).$ \pause
 
 \textbf{Demonstração:} A linearidade de $T$ segue direto da linearidade de $T_n$. \pause
 
@@ -188,7 +188,7 @@ Como $X$ é completo, $(\Vert T_n \Vert)$ é limitado pelo teorema da limitaçã
 	Uma sequência $(T_n)$ de operadores $T_n \in B(X,Y)$, onde $X$ e $Y$ são espaços de Banach, é fortemente convergente se, e somente se, são satisfeitos:
 \begin{enumerate} \pause
 \item[(A)] A sequência $(\Vert T_n \Vert )$ é limitada. \pause
-\item[(B)] A sequência $(T_nx)$ é Cauchy em $Y$ para todo $x$ em um conjunto  maximal $M$ de $X$.
+\item[(B)] A sequência $(T_nx)$ é Cauchy em $Y$ para todo $x$ em um conjunto  total $M$ de $X$.
 \end{enumerate}
 
 \end{block}
@@ -200,7 +200,7 @@ Como $X$ é completo, $(\Vert T_n \Vert)$ é limitado pelo teorema da limitaçã
 \justifying
 \textbf{Demonstração:} Se $T_nx \l Tx$ para cada $x \in X$, então $(A)$ segue do lema anterior e $(B)$ é verificado facilmente. \pause
 
-	Reciprocamente, assumindo que $(A)$ e $(B)$ são satisfeitos existe $c$ tal que $\Vert T_n \Vert \leq c$ para todo $n$. \pause Seja agora $x \in X$ e $\epsilon > 0$. Como $M$ é maximal em $X$ segue que span $M$ é denso em $X$. Então existe $y \in span M$ tal que $$\Vert x - y \Vert < \dfrac{\epsilon}{3c}.$$
+	Reciprocamente, assumindo que $(A)$ e $(B)$ são satisfeitos existe $c$ tal que $\Vert T_n \Vert \leq c$ para todo $n$. \pause Seja agora $x \in X$ e $\epsilon > 0$. Como $M$ é total em $X$ segue que span $M$ é denso em $X$. Então existe $y \in span M$ tal que $$\Vert x - y \Vert < \dfrac{\epsilon}{3c}.$$
 
 }
 
@@ -396,4 +396,22 @@ Considerando uma sequência de funconais $(f_n)$ no teorema anterior obtemos apl
   \end{block}
 }
 
+\frame{\frametitle{Exemplos}
+\justifying
+Com o $C_1$-método encontraremos o $C_1$ limite para as sequências abaixo: 
+$$(1,0,1,0,1,0,\cdots)$$ \pause
+
+ $$(1,0,-\dfrac{1}{4},-\dfrac{2}{8},-\dfrac{3}{16},\cdots).$$
+}
+
+\frame{\frametitle{Exemplos}
+\justifying
+\textbf{Método da Somabilidade de Holder} $H_P$ é definido a seguir. $H_1$ é idêntico a $C_1$. O método $H_2$ consiste de duas sucessivas aplicações de $H_1$; $H_3$ consiste de três aplicações seguidas de $H_3$, e assim sucessivamtne. Vejamos os métodos $H_1$ e $H_2$ para a sequência:
+$$(1,-3,5,-7,9,-11,\cdots).$$
+}
+
+\frame{\frametitle{Exemplos}
+\justifying
+\textbf{Séries} Uma série infinita é dita $A$-somável se a sequência de suas somas parciais é $A$-somável, e o $A$-limite da sequência é chamado $A$-soma da série. \pause Vejamos que a seríe $1 + z + z^2 + \cdots$ é $C_1$-somável para $\vert z \vert \leq 1$ e sua soma é $\dfrac{1}{1 - z}.$
+}
 \end{document}
